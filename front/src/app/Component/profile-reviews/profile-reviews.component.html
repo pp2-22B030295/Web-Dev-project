@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="profile-reviews.component.css">
+</head>
+<body>
+<div class="container">
+  <div class="user-profile">
+    <div class="user-info">
+      <div class="user-info-up-part">
+        <img src="assets/default-avatar.jpg" alt="User Photo">
+        <div class="user-details">
+          <div class="name">John Doe</div>
+          <div class="email">
+            <img src="assets/email-icon.png" alt="Email Icon">
+            <span>exampleюexample.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="user-info-down-part">
+        <div class="buttons">
+          <button (click)="navigateToProfileInfo()">Information</button>
+          <button (click)="navigateToProfileLibrary()">Library</button>
+          <button class="active" (click)="navigateToProfileReviews()">Reviews</button>
+        </div>
+      </div>
+    </div>
+    <div class="info-section">
+      <!-- Information about the user will be displayed here -->
+    </div>
+  </div>
+</div>
+</body>
+</html>
