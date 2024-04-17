@@ -27,6 +27,6 @@ export class AppComponent {
     this.router.navigate(['login']);
   }
   navigateToSignIn() {
-    this.router.navigate(['sign_in']);
+    this.router.navigate(['sign-in']);
   }
 }

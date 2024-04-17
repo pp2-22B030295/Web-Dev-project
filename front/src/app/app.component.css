@@ -3,17 +3,43 @@
   font-weight: bolder;
   font-size: 32px;
 }
+
 #site-header {
   display: flex;
+  align-items: center;
 }
+
+.site-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #f5c518;
+  background-color: #ffffff;
+}
+
+.home-login-img{
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+
+
+
+
 .home-login-btn{
   color: #f5c518;
   border: #f5c518 solid 1px;
 }
+
 .home-login-btn:hover{
   background-color: transparent;
 }
+
 .home-sign-up-btn{
   background-color: #f5c518;
   border: #f5c518 solid 1px;
 }
+
