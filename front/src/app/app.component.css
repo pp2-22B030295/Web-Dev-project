@@ -1,0 +1,19 @@
+#site-name{
+  color: #f5c518;
+  font-weight: bolder;
+  font-size: 32px;
+}
+#site-header {
+  display: flex;
+}
+.home-login-btn{
+  color: #f5c518;
+  border: #f5c518 solid 1px;
+}
+.home-login-btn:hover{
+  background-color: transparent;
+}
+.home-sign-up-btn{
+  background-color: #f5c518;
+  border: #f5c518 solid 1px;
+}

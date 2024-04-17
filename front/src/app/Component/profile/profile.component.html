@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="profile.component.css">
 </head>
 <body>
-<div class="container">
   <div class="user-profile">
     <div class="user-info">
       <div class="user-info-up-part">
@@ -22,16 +21,41 @@
       <div class="divider"></div>
       <div class="user-info-down-part">
         <div class="buttons">
-          <button class="active" (click)="navigateToProfileInfo()">Information</button>
-          <button (click)="navigateToProfileLibrary()">Library</button>
-          <button (click)="navigateToProfileReviews()">Reviews</button>
+          <button class="active" (click)="navigateToProfileInfo()">Info</button>
+          <button class="" (click)="navigateToProfileLibrary()">Library</button>
+          <button class="" (click)="navigateToProfileReviews()">Reviews</button>
         </div>
       </div>
     </div>
     <div class="info-section">
-      <p>sdcsd d</p>
+      <div class="info-section-table">
+        <table>
+          <tr>
+            <th colspan="2">User Information</th>
+          </tr>
+          <tr>
+            <td>Username</td>
+            <td>John Doe</td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>exampleюexample.com</td>
+          </tr>
+          <tr>
+            <td>Password</td>
+            <td>********</td>
+          </tr>
+          <tr>
+            <td>Registration Date</td>
+            <td>April 17, 2024</td>
+          </tr>
+        </table>
+      </div>
+      <div class="info-section-buttons">
+        <button class="info-section-btn-sign-out">SIGN OUT</button>
+        <button class="info-section-btn-update-profile">UPDATE PROFILE</button>
+      </div>
     </div>
   </div>
-</div>
 </body>
 </html>

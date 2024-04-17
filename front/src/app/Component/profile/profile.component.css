@@ -5,24 +5,23 @@ body {
   padding: 0;
 }
 
-.container {
+.user-profile {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: fit-content;
-  margin-top: 20px;
-
+  flex-direction: column;
+  background-color: #121212;
+  border-radius: 4px;
+  padding: 20px;
 }
 
-.user-profile {
+.user-info {
+  display: flex;
+  flex-direction: column;
   background-color: #1b1b1b;
   border-radius: 4px;
   padding: 20px;
   width: 47%;
-}
-.user-info {
-  display: flex;
-  flex-direction: column;
 }
 
 .user-info-up-part img {
@@ -79,6 +78,38 @@ body {
   justify-content: space-around;
 }
 
+.active {
+  color: #6258cb;
+}
+
+.info-section {
+  margin-top: 10px;
+  background-color: #1b1b1b;
+  border-radius: 4px;
+  padding: 20px;
+  width: 47%;
+}
+table {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 10px;
+  color: #676767;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 0.1px solid #2a2a2a;
+}
+th {
+  background-color: #252525;
+}
+.info-section-buttons{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
 button {
   height: fit-content;
   margin-right: 10px;
@@ -90,14 +121,22 @@ button {
   transition: color 0.3s ease;
 }
 
-.active {
-  color: #6258cb;
-}
-
-.info-section {
-  margin-top: 20px;
-  background-color: #1b1b1b;
+.info-section-btn-sign-out{
+  border: 1.2px solid #6258cc;
   border-radius: 4px;
-  padding: 20px;
-  width: 47%;
+  background-color: #212121;
+  color: #6258CCFF;
+  margin-right: 10px;
+  font-size: 8px;
+  cursor: pointer;
+  padding: 4px;
+}
+.info-section-btn-update-profile{
+  border: none;
+  border-radius: 4px;
+  background-color: #6258cc;
+  color: #fdfdfd;
+  font-size: 8px;
+  cursor: pointer;
+  padding: 4px;
 }
