@@ -16,10 +16,6 @@ export class UserLibraryService {
     return this.httpClient.get<UserLibrary[]>(this.apiUrl);
   }
 
-  getUserLibrary(id: number): Observable<UserLibrary> {
-    return this.httpClient.get<UserLibrary>(`${this.apiUrl}${id}/`);
-  }
-
   createUserLibrary(userLibrary: UserLibrary): Observable<UserLibrary> {
     return this.httpClient.post<UserLibrary>(this.apiUrl, userLibrary);
   }
@@ -31,4 +27,5 @@ export class UserLibraryService {
   deleteUserLibrary(id: number): Observable<void> {
     return this.httpClient.delete<void>(`${this.apiUrl}${id}/`);
   }
+
 }

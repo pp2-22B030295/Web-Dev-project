@@ -28,8 +28,10 @@
     </div>
   </div>
   <div class="info-section">
-<!--    <movie-card *ngFor="let movie of movies" [movie]="movie"></movie-card>
-  --></div>
+    <ng-container *ngFor="let movie of movies">
+      <app-movie-card [movie]="movie"></app-movie-card>
+    </ng-container>
+  </div>
 </div>
 </body>
 </html>
