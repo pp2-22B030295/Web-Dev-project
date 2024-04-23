@@ -6,6 +6,7 @@ import {SearchComponent} from "./Component/search/search.component";
 import {BrowseComponent} from "./Component/browse/browse.component";
 import {SignInComponent} from "./Component/sign-in/sign-in.component";
 import {LoginComponent} from "./Component/login/login.component";
+import {MovieComponent} from "./Component/movie/movie.component";
 
 export const routes: Routes = [
   {path : 'profile', component:ProfileComponent},
@@ -15,4 +16,5 @@ export const routes: Routes = [
   {path : 'browse', component:BrowseComponent},
   {path : 'sign-in', component:SignInComponent},
   {path : 'login', component:LoginComponent},
+  {path : 'movies/:id', component:MovieComponent},
 ]

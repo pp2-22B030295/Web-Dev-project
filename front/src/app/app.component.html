@@ -1,25 +1,20 @@
-<div class="container">
+
   <header class=" site-header d-flex flex-wrap align-items-center justify-content-center justify-content-between mb-4 border-bottom">
 
     <ul id="site-header" class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
       <li><a routerLink="" id="site-name" class="nav-link px-2 ">LMDB</a></li>
       <li><a routerLink="search" class="nav-link px-2 link-dark">Search</a></li>
       <li><a routerLink="browse" class="nav-link px-2 link-dark">Browse</a></li>
+      <img src="assets/search.png" alt="image" class="filter-image" />
+      <input type="text" placeholder="Search LMDB" class="filter-textinput"/>
+      <button type="button" class="filter-button">Sign In</button>
+      <button type="button" class="filter-button1">Login</button>
+      <img class="home-login-img" (click)="navigateToLogin()" src="assets/default-avatar.jpg" alt="User Photo">
     </ul>
-<!--
-    <div class="col-md-3 text-end">
+    </header>
 
-      <button (click)="navigateToLogin()" type="button" class="home-login-btn btn btn-outline-primary me-2">Login</button>
-      <button (click)="navigateToSignIn()" type="button" class="home-sign-up-btn btn btn-primary">Sign-up</button>
-    </div>
--->
-    <img class="home-login-img" (click)="navigateToLogin()" src="assets/default-avatar.jpg" alt="User Photo">
-  </header>
-</div>
 
 <button class="" (click)="navigateToProfileInfo()">Information</button>
-<button class="" (click)="navigateToProfileLibrary()">Library</button>
-<button class="active" (click)="navigateToProfileReviews()">Reviews</button>
 
 
 <router-outlet></router-outlet>

@@ -14,15 +14,11 @@ import {ProfileLibraryComponent} from "./Component/profile-library/profile-libra
 export class AppComponent {
   title = 'front';
   constructor(private router: Router) {}
+
   navigateToProfileInfo() {
     this.router.navigate(['profile']);
   }
-  navigateToProfileReviews() {
-    this.router.navigate(['profile/reviews']);
-  }
-  navigateToProfileLibrary() {
-    this.router.navigate(['profile/library']);
-  }
+
   navigateToLogin() {
     this.router.navigate(['login']);
   }

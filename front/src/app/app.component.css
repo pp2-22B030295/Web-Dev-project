@@ -26,9 +26,6 @@
 }
 
 
-
-
-
 .home-login-btn{
   color: #f5c518;
   border: #f5c518 solid 1px;
@@ -43,3 +40,40 @@
   border: #f5c518 solid 1px;
 }
 
+.filter-image {
+  width: 15px;
+  height: 15px;
+  object-fit: cover;
+  margin-top: 4px;
+  margin-left: 10px;
+}
+
+.filter-textinput {
+  width: 250px;
+  align-self: center;
+  border-color: #676767;
+  border-radius: 8px;
+  border:  0.5px solid #acacac;
+  padding-right: 3px;
+  font-size: 12px;
+  margin-left: 5px;
+  margin-top: 4px;
+}
+.filter-button {
+  color: #f5c518;
+  background-color: white;
+  margin-left: 220px;
+  border-color: #f5c518;
+  margin-right: 20px;
+  border-radius: 4px;
+}
+.filter-button1 {
+  background-color: #f5c518;
+  border-color: #f5c518;
+  color: white;
+  border-radius: 4px;
+  margin-right: 20px;
+}
+.right-header{
+
+}
