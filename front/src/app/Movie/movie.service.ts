@@ -6,7 +6,7 @@ import { Movie } from './Movie';
 @Injectable({
   providedIn: 'root'
 })
-export class FilmService {
+export class MovieService {
 
   private apiUrl = "http://127.0.0.1:8000/films/";
 

@@ -16,5 +16,5 @@ export const routes: Routes = [
   {path : 'browse', component:BrowseComponent},
   {path : 'sign-in', component:SignInComponent},
   {path : 'login', component:LoginComponent},
-  {path : 'movies/:id', component:MovieComponent},
+  {path : 'search/:id', component:MovieComponent},
 ]
