@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
-
 @Component({
   selector: 'app-profile-reviews',
   standalone: true,
@@ -9,7 +8,9 @@ import {Router} from "@angular/router";
   styleUrl: './profile-reviews.component.css'
 })
 export class ProfileReviewsComponent {
-  constructor(private router: Router) {}
+
+  constructor(private router: Router){}
+
   navigateToProfileInfo() {
     this.router.navigate(['profile']);
   }
@@ -19,4 +20,6 @@ export class ProfileReviewsComponent {
   navigateToProfileLibrary() {
     this.router.navigate(['profile/library']);
   }
+
+
 }

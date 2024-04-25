@@ -8,15 +8,15 @@
 <body>
 <div class="user-profile">
   <div class="buttons-section">
-    <button>Action</button>
-    <button>Romance</button>
-    <button>Horror</button>
-    <button>Fantasy</button>
-
+    <button (click)="filterMoviesByCategory('action')">Action</button>
+    <button (click)="filterMoviesByCategory('romance')">Romance</button>
+    <button (click)="filterMoviesByCategory('horror')">Horror</button>
+    <button (click)="filterMoviesByCategory('fantasy')">Fantasy</button>
+    <button (click)="clearFilter()">Show All</button>
   </div>
 
   <div class="movie-section">
-    <ng-container *ngFor="let movie of movies">
+    <ng-container *ngFor="let movie of filteredMovies">
       <div class="movie-card">
         <div class="card-right-side">
           <img class="poster" alt="poster-img" src="assets/poster.jpg">
@@ -32,6 +32,7 @@
       </div>
     </ng-container>
   </div>
+
 
 
 </div>

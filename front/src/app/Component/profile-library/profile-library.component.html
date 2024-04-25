@@ -28,7 +28,21 @@
     </div>
   </div>
   <div class="info-section">
-
+    <ng-container *ngFor="let movie of movies">
+      <div class="movie-card">
+        <div class="card-right-side">
+          <img class="poster" alt="poster-img" src="assets/poster.jpg">
+        </div>
+        <div class="card-left-side">
+          <h1>{{movie.name}} <span id="rating">{{movie.rating}}/10</span></h1>
+          <p>
+            <span>Duration: {{movie.duration}} min</span><br>
+            <span>Categories: {{movie.category}}</span>
+            <span></span>
+          </p>
+        </div>
+      </div>
+    </ng-container>
   </div>
 </div>
 </body>

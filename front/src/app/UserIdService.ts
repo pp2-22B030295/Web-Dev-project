@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class UserIdService {
   userId: number = 0;
-  profileStatus: boolean = false;
+  profileStatus: boolean = true;
   constructor() { }
 
   setProfileStatus(status: boolean) {

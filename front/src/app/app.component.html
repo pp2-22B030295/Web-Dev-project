@@ -7,12 +7,12 @@
       <li><a routerLink="browse" class="nav-link px-2 link-dark">Browse</a></li>
       <img src="assets/search.png" alt="image" class="filter-image" />
       <input type="text" placeholder="Search LMDB" class="filter-textinput"/>
+
       <button type="button" *ngIf="!profileIsActive" (click)="navigateToSignIn()" class="filter-button">Sign In</button>
       <button type="button" *ngIf="!profileIsActive" (click)="navigateToLogin()" class="filter-button1">Login</button>
       <img class="home-login-img" src="assets/default-avatar.jpg" alt="User Photo" *ngIf="profileIsActive" (click)="navigateToProfileInfo()" >
     </ul>
     </header>
-
 
 <router-outlet></router-outlet>
 

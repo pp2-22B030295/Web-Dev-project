@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {NgForOf} from "@angular/common";
-import {MovieService} from "../../Movie/movie.service";
 
 class Movie {
   constructor(name: string, duration: number, category: Category[], rating: number) {
@@ -36,24 +35,22 @@ class Category{
   styleUrl: './browse.component.css'
 })
 export class BrowseComponent {
-  constructor(/**private movieService: MovieService**/) {}
-  movies: Movie[] = [new Movie("Marvel", 15, [new Category("action") , new Category("horror")], 7.0), new Movie("Witch", 88, [new Category("thriller") , new Category("horror")], 8.0)];
-
-
-  fantasyFilter(){
-
+  filteredMovies: Movie[] = [];
+  constructor(/**private movieService: MovieService**/) {
+    this.filteredMovies = this.movies;
   }
-  thrillerFilter(){
+  movies: Movie[] = [
+    new Movie("Marvel", 15, [new Category("action") , new Category("horror")], 7.0),
+    new Movie("Witch", 88, [new Category("thriller") , new Category("horror")], 8.0)
+  ];
 
+
+  filterMoviesByCategory(category: string) {
+    this.filteredMovies = this.movies.filter(movie => movie.category.some(cat => cat.name.toLowerCase() === category.toLowerCase()));
   }
-  actionFilter(){
 
-  }
-  romanceFilter(){
-
-  }
-  horrorFilter(){
-
+  clearFilter() {
+    this.filteredMovies = this.movies;
   }
 
   /**

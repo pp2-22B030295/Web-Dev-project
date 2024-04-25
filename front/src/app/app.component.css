@@ -12,7 +12,7 @@
 .site-header{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 4px;
   border-bottom: 1px solid #f5c518;
   background-color: #ffffff;
@@ -24,7 +24,7 @@
   width: 40px;
   cursor: pointer;
   position: relative;
-  left: 390px
+  left: 100px
 }
 
 
