@@ -14,12 +14,31 @@ class Film(models.Model):
 
     def __str__(self):
         return self.name 
+    
+    def to_json(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'release_year': self.release_year,
+            'description': self.description,
+            'director': self.director,
+            'duration': self.duration,
+            'rating': self.rating,
+            'poster': self.poster,
+            'category': self.category,
+        }
 
 class Category(models.Model):
     name = models.CharField(max_length=20)
 
     def __str__(self):
         return self.name
+    
+    def to_json(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+        }
 
 class FilmCategory(models.Model):
     film = models.ForeignKey(Film, on_delete=models.CASCADE)
@@ -30,7 +49,15 @@ class FilmCategory(models.Model):
 
     def __str__(self):
         return f'{self.film} - {self.category}'
-
+   
+    def to_json(self):
+        return {
+            'id': self.id,
+            'film': self.film,
+            'category': self.category,
+        }
+    class Meta:
+        unique_together = ['film', 'category']
 
 class User(models.Model):
     name = models.CharField(max_length=20)
@@ -39,7 +66,14 @@ class User(models.Model):
 
     def __str__(self):
         return self.name 
-
+        
+    def to_json(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'registration_date': self.registration_date,
+        }
 class Reviews(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     film = models.ForeignKey(Film, on_delete=models.CASCADE)
@@ -48,7 +82,17 @@ class Reviews(models.Model):
 
     def __str__(self):
         return self.description
+    
+    def to_json(self):
+        return {
+            'id': self.id,
+            'user': self.name,
+            'film': self.film,
+            'description': self.description,
+            'creation_date': self.creation_date,
 
+        }
+    
 
 class UserLibrary(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -56,7 +100,15 @@ class UserLibrary(models.Model):
 
     def __str__(self):
         return f'{self.user} - {self.film}'
-
+        
+    def to_json(self):
+        return {
+            'id': self.id,
+            'user': self.user,
+            'film': self.film,
+        }
+    class Meta:
+        unique_together = ['user', 'film']
 
 class UserReviews(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -64,3 +116,12 @@ class UserReviews(models.Model):
 
     def __str__(self):
         return f'{self.user} - {self.review}'
+    
+    def to_json(self):
+        return {
+            'id': self.id,
+            'user': self.user,
+            'review': self.review,
+        }
+    class Meta:
+        unique_together = ['user', 'review']

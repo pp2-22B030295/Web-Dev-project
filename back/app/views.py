@@ -1,10 +1,11 @@
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .serializers import FilmSerializer, CategorySerializer, ReviewsSerializer, UserLibrarySerializer, UserReviewsSerializer, UserSerializer
-from .models import Film, Category, Reviews, User, UserLibrary, UserReviews
+from .serializers import FilmCategorySerializer, FilmSerializer, CategorySerializer, ReviewsSerializer, UserLibrarySerializer, UserReviewsSerializer, UserSerializer
+from .models import Film, Category, FilmCategory, Reviews, User, UserLibrary, UserReviews
 
 @api_view(["GET", "POST", "PUT", "DELETE"])
 def film_view(request, film_id=None):
@@ -41,7 +42,6 @@ def film_view(request, film_id=None):
             return Response(status=status.HTTP_204_NO_CONTENT)
         return Response({"error": "No id provided"}, status=status.HTTP_400_BAD_REQUEST)
 
-
 @api_view(["GET", "POST", "PUT", "DELETE"])
 def category_view(request, category_id=None):
     if request.method == "GET":
@@ -77,6 +77,40 @@ def category_view(request, category_id=None):
             return Response(status=status.HTTP_204_NO_CONTENT)
         return Response({"error": "No id provided"}, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(["GET", "POST", "PUT", "DELETE"])
+def film_category_view(request, film_category_id=None):
+    if request.method == "GET":
+        if film_category_id:
+            film_category = get_object_or_404(FilmCategory, id=film_category_id)
+            serializer = FilmCategorySerializer(instance=film_category)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        film_categories = FilmCategory.objects.all()
+        serializer = FilmCategorySerializer(film_categories, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    if request.method == "POST":
+        serializer = FilmCategorySerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    if request.method == "PUT":
+        if film_category_id:
+            film_category = get_object_or_404(FilmCategory, id=film_category_id)
+            serializer = FilmCategorySerializer(instance=film_category, data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_205_RESET_CONTENT)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response({"error": "No id provided"}, status=status.HTTP_400_BAD_REQUEST)
+
+    if request.method == "DELETE":
+        if film_category_id:
+            film_category = get_object_or_404(FilmCategory, id=film_category_id)
+            film_category.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response({"error": "No id provided"}, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(["GET", "POST", "PUT", "DELETE"])
 def reviews_view(request, review_id=None):
@@ -183,7 +217,6 @@ def user_library_view(request, user_library_id=None):
             return Response(status=status.HTTP_204_NO_CONTENT)
         return Response({"error": "No id provided"}, status=status.HTTP_400_BAD_REQUEST)
 
-
 @api_view(["GET", "POST", "PUT", "DELETE"])
 def user_reviews_view(request, user_reviews_id=None):
     if request.method == "GET":
@@ -218,3 +251,5 @@ def user_reviews_view(request, user_reviews_id=None):
             user_reviews.delete()
             return Response(status=status.HTTP_204_NO_CONTENT)
         return Response({"error": "No id provided"}, status=status.HTTP_400_BAD_REQUEST)
+
+

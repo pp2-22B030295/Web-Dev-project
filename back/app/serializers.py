@@ -30,6 +30,20 @@ class CategorySerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         return Category.objects.create(**validated_data)
 
+class FilmCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FilmCategory
+        fields = '__all__'
+
+    def create(self, validated_data):
+        return FilmCategory.objects.create(**validated_data)
+    
+    def update(self, instance, validated_data):
+        instance.film = validated_data.get('film', instance.film)
+        instance.category = validated_data.get('category', instance.category)
+        instance.save()
+        return instance
+
 class ReviewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reviews

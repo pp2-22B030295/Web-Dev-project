@@ -31,6 +31,9 @@ urlpatterns = [
     path('categories/', views.category_view, name='category-list'),
     path('categories/<int:category_id>/', views.category_view, name='category-detail'),
 
+    # Film Category URLs
+    path('film-categories/', views.film_category_view, name='film-categories-list'),
+
     # Reviews URLs
     path('reviews/', views.reviews_view, name='reviews-list'),
 
@@ -39,7 +42,7 @@ urlpatterns = [
 
     # User Library URLs
     path('user-library/', views.user_library_view, name='user-library-list'),
-
+    
     # User Reviews URLs
     path('user-reviews/', views.user_reviews_view, name='user-reviews-list'),
 
