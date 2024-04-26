@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'app'
+    'app',
+    'authentication'
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
  
+# Substituting a custom User model¶
+# https://docs.djangoproject.com/en/3.1/topics/auth/customizing/#substituting-a-custom-user-model
+
+AUTH_USER_MODEL = 'authentication.User'

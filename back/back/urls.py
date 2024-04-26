@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.db import router
 from django.urls import include, path
 from app import views
+import authentication.urls
 
 
 urlpatterns = [
@@ -45,5 +46,6 @@ urlpatterns = [
     
     # User Reviews URLs
     path('user-reviews/', views.user_reviews_view, name='user-reviews-list'),
-
+    
+    path("authentication/", include("authentication.urls"))
 ]
